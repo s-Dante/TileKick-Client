@@ -1,4 +1,5 @@
 import './style.css';
+import '@google/model-viewer';
 import { Router } from '@/core';
 
 import { LandingView } from '@/views';

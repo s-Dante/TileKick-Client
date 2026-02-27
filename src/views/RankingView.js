@@ -9,13 +9,13 @@ export class RankingView extends Component {
         // Datos de prueba (Mock)
         this.state = {
             players: [
-                { id: 1, fullName: "Omar Fernández", username: "@omar_fernandez", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024d", elo: 1850, badge: "Oro", wins: 95, losses: 47 },
-                { id: 2, fullName: "Valentina Rojas", username: "@vale_r", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024e", elo: 2100, badge: "Diamante", wins: 142, losses: 20 },
-                { id: 3, fullName: "Carlos Silva", username: "@carlos_s", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024f", elo: 1980, badge: "Platino", wins: 110, losses: 35 },
-                { id: 4, fullName: "Sofia Gómez", username: "@sofi_gomez", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024g", elo: 1720, badge: "Plata", wins: 80, losses: 62 },
-                { id: 5, fullName: "Mateo Pérez", username: "@mateo_perez", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024h", elo: 1650, badge: "Bronce", wins: 65, losses: 50 },
-                { id: 6, fullName: "Lucía Martínez", username: "@lucia_mtz", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024i", elo: 1590, badge: "Bronce", wins: 50, losses: 40 },
-                { id: 7, fullName: "Javier López", username: "@javi_lopez", profilePic: "https://i.pravatar.cc/150?u=a042581f4e29026024j", elo: 1400, badge: "Hierro", wins: 30, losses: 80 },
+                { id: 1, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1850, badge: "Oro", wins: 95, losses: 47 },
+                { id: 2, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 2100, badge: "Diamante", wins: 142, losses: 20 },
+                { id: 3, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1980, badge: "Platino", wins: 110, losses: 35 },
+                { id: 4, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1720, badge: "Plata", wins: 80, losses: 62 },
+                { id: 5, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1650, badge: "Bronce", wins: 65, losses: 50 },
+                { id: 6, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1590, badge: "Bronce", wins: 50, losses: 40 },
+                { id: 7, fullName: "Nombre de usuario", username: "@username", profilePic: "", elo: 1400, badge: "Hierro", wins: 30, losses: 80 },
             ]
         };
     }
@@ -57,14 +57,14 @@ export class RankingView extends Component {
                     <div>
                         <ul class="${styles.tabList}">
                             <li><button class="${styles.tabActive}">Global</button></li>
-                            <li><button class="${styles.tabInactive}">Amigos</button></li>
+                            <!--<li><button class="${styles.tabInactive}">Amigos</button></li>-->
                         </ul>
                     </div>
                     <!-- Stats Resumen -->
                     <div class="${styles.statsBox}">
                         <div class="${styles.statPill}">
-                            <span class="${styles.statLabel}">Jugadores Activos</span>
-                            <span class="${styles.statValue}">12,458</span>
+                            <span class="${styles.statLabel}">Jugadores</span>
+                            <span class="${styles.statValue}">10</span>
                         </div>
                     </div>
                 </div>
