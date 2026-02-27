@@ -3,22 +3,31 @@ import { Sidebar } from '@/components';
 export function MainLayout(contentHTML, title = '') {
     const sidebar = new Sidebar();
 
+    const styles = {
+        container: "flex h-screen bg-bg-primary font-sans overflow-hidden",
+        main: "flex-1 p-4 md:p-8 overflow-y-auto custom-scrollbar",
+        wrapper: "max-w-6xl mx-auto h-full flex flex-col",
+        header: "mb-8",
+        title: "text-3xl font-bold text-text-primary tracking-tight",
+        cardContainer: "flex-1 bg-bg-secondary-opaque backdrop-blur-md border border-border-primary/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+    };
+
     return `
-    <div class="flex h-screen bg-gray-900 font-sans overflow-hidden">
+    <div class="${styles.container}">
         ${sidebar.render()}
         
         <!-- Contenedor Principal Flotante -->
-        <main class="flex-1 p-4 md:p-8 overflow-y-auto">
-            <div class="max-w-6xl mx-auto h-full flex flex-col">
+        <main class="${styles.main}">
+            <div class="${styles.wrapper}">
                 
                 ${title ? `
-                <header class="mb-8">
-                    <h2 class="text-3xl font-bold text-white tracking-tight">${title}</h2>
+                <header class="${styles.header}">
+                    <h2 class="${styles.title}">${title}</h2>
                 </header>
                 ` : ''}
                 
                 <!-- Tarjeta Flotante -->
-                <div class="flex-1 bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+                <div class="${styles.cardContainer}">
                     ${contentHTML}
                 </div>
                 

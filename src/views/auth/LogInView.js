@@ -5,49 +5,69 @@ import { SocialButton } from '@/components';
 export class LogInView extends Component {
     async render() {
         const layout = new AuthLayout();
-        
-        const loginFormHTML = `
-            <div class="animate-slide-up">
-                <h2 class="text-3xl font-bold text-white mb-2 text-center md:text-left">Bienvenido de nuevo</h2>
-                <p class="text-gray-400 mb-8 text-center md:text-left">Ingresa tus credenciales para acceder al tablero.</p>
 
-                <form id="login-form" class="space-y-4">
+        const styles = {
+            container: "animate-slide-up",
+            title: "text-3xl font-bold text-text-primary mb-2 text-center md:text-left",
+            subtitle: "text-text-secondary mb-8 text-center md:text-left",
+            form: "space-y-4",
+            label: "block text-text-secondary text-sm mb-2",
+            labelFlex: "text-text-secondary text-sm",
+            input: "w-full bg-bg-secondary border border-border-primary rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-border-accent transition-colors",
+            link: "text-accent-primary text-sm hover:text-accent-hover hover:underline",
+            submitBtn: "w-full bg-accent-primary hover:bg-accent-hover text-text-primary font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
+            dividerContainer: "relative my-8",
+            dividerLineWrapper: "absolute inset-0 flex items-center",
+            dividerLine: "w-full border-t border-border-primary",
+            dividerTextWrapper: "relative flex justify-center text-sm uppercase",
+            dividerText: "bg-bg-primary px-2 text-text-secondary font-bold tracking-tighter",
+            socialContainer: "flex flex-col gap-3",
+            footerText: "mt-8 text-center text-text-secondary",
+            footerLink: "text-accent-primary font-bold hover:text-accent-hover transition-colors"
+        };
+
+        const loginFormHTML = `
+            <div class="${styles.container}">
+                <h2 class="${styles.title}">Bienvenido de nuevo</h2>
+                <p class="${styles.subtitle}">Ingresa tus datos para iniciar sesión.</p>
+
+                <form id="login-form" class="${styles.form}">
                     <div>
-                        <label class="block text-gray-400 text-sm mb-2">Usuario o Email</label>
+                        <label class="${styles.label}">Usuario o Email</label>
                         <input type="text" name="identity" required
-                            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                            class="${styles.input}"
                             placeholder="nombre@ejemplo.com">
                     </div>
 
                     <div>
                         <div class="flex justify-between mb-2">
-                            <label class="text-gray-400 text-sm">Contraseña</label>
-                            <a href="/auth/recovery" data-link class="text-blue-500 text-sm hover:underline">¿La olvidaste?</a>
+                            <label class="${styles.labelFlex}">Contraseña</label>
+                            <a href="/auth/recovery" data-link class="${styles.link}">¿La olvidaste?</a>
                         </div>
                         <input type="password" name="password" required
-                            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                            class="${styles.input}"
                             placeholder="••••••••">
                     </div>
 
-                    <button type="submit" 
-                        class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg mt-4 transition-all shadow-lg shadow-blue-900/20">
+                    <button type="submit" class="${styles.submitBtn}">
                         Iniciar Sesión
                     </button>
                 </form>
 
-                <div class="relative my-8">
-                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-800"></div></div>
-                    <div class="relative flex justify-center text-sm uppercase"><span class="bg-gray-900 px-2 text-gray-500 font-bold tracking-tighter">O continúa con</span></div>
+                <!-- Social Buttons 
+                <div class="${styles.dividerContainer}">
+                    <div class="${styles.dividerLineWrapper}"><div class="${styles.dividerLine}"></div></div>
+                    <div class="${styles.dividerTextWrapper}"><span class="${styles.dividerText}">O continúa con</span></div>
                 </div>
 
-                <div class="social-container">
+                <div class="${styles.socialContainer}">
                     ${new SocialButton({ provider: 'Google', icon: '🌐' }).render()}
                     ${new SocialButton({ provider: 'GitHub', icon: '🐙' }).render()}
                 </div>
-
-                <p class="mt-8 text-center text-gray-500">
+                -->
+                <p class="${styles.footerText}">
                     ¿Aún no tienes cuenta? 
-                    <a href="/auth/signin" data-link class="text-blue-400 font-bold hover:text-blue-300 transition-colors">Regístrate</a>
+                    <a href="/auth/signin" data-link class="${styles.footerLink}">Regístrate</a>
                 </p>
             </div>
         `;

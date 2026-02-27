@@ -3,9 +3,15 @@ import { Component } from '@/core';
 export class SocialButton extends Component {
     render() {
         const { provider, icon, colorClass } = this.props;
+
+        const styles = {
+            btn: "w-full flex items-center justify-center gap-3 px-4 py-2 border border-border-primary rounded-lg text-text-primary hover:bg-bg-secondary transition-colors mb-3",
+            iconWrap: "text-xl"
+        };
+
         return `
-            <button class="w-full flex items-center justify-center gap-3 px-4 py-2 border border-gray-700 rounded-lg text-white hover:bg-gray-800 transition-colors mb-3">
-                <span class="text-xl">${icon}</span>
+            <button class="${styles.btn}">
+                <span class="${styles.iconWrap}">${icon}</span>
                 <span>Continuar con ${provider}</span>
             </button>
         `;

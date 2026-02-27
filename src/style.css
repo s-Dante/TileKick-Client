@@ -1,18 +1,115 @@
 @import "tailwindcss";
 
+@layer base {
+
+    /* Tema Oscuro (Por Defecto) */
+    :root {
+        --color-bg-primary: #24422b;
+        --color-bg-secondary: #192b38;
+        --color-bg-tertiary: #1b302d;
+
+        --color-bg-primary-opaque: #24422b66;
+        --color-bg-secondary-opaque: #192b3866;
+
+        --color-text-primary: #FFFFFF;
+        --color-text-secondary: #9CA3AF;
+        --color-text-tertiary: #D1D5DB;
+
+        --color-accent-primary: #e37e4b;
+        --color-accent-hover: #c5563c;
+
+        --color-border-primary: #24422b;
+        --color-border-accent: #e37e4b;
+
+        --color-success: #10B981;
+        --color-danger: #EF4444;
+    }
+
+    /* Tema Claro */
+    [data-theme="light"] {
+        --color-bg-primary: #F3F4F6;
+        --color-bg-secondary: #FFFFFF;
+        --color-bg-tertiary: #E5E7EB;
+
+        --color-bg-primary-opaque: rgba(243, 244, 246, 0.4);
+        --color-bg-secondary-opaque: rgba(255, 255, 255, 0.8);
+
+        --color-text-primary: #111827;
+        --color-text-secondary: #4B5563;
+        --color-text-tertiary: #6B7280;
+
+        --color-accent-primary: #2563EB;
+        --color-accent-hover: #1D4ED8;
+
+        --color-border-primary: #D1D5DB;
+        --color-border-accent: #2563EB;
+
+        --color-success: #059669;
+        --color-danger: #DC2626;
+    }
+
+    /* Tema Extra (Neon/Cyberpunk) */
+    [data-theme="neon"] {
+        --color-bg-primary: #09090b;
+        --color-bg-secondary: #18181b;
+        --color-bg-tertiary: #27272a;
+
+        --color-bg-primary-opaque: rgba(9, 9, 11, 0.6);
+        --color-bg-secondary-opaque: rgba(24, 24, 27, 0.8);
+
+        --color-text-primary: #f4f4f5;
+        --color-text-secondary: #a1a1aa;
+        --color-text-tertiary: #e4e4e7;
+
+        /* Colores vivos */
+        --color-accent-primary: #d946ef;
+        --color-accent-hover: #c026d3;
+
+        --color-border-primary: #3f3f46;
+        --color-border-accent: #d946ef;
+
+        --color-success: #22c55e;
+        --color-danger: #f43f5e;
+    }
+}
+
+@theme {
+    --color-bg-primary: var(--color-bg-primary);
+    --color-bg-secondary: var(--color-bg-secondary);
+    --color-bg-tertiary: var(--color-bg-tertiary);
+
+    --color-bg-primary-opaque: var(--color-bg-primary-opaque);
+    --color-bg-secondary-opaque: var(--color-bg-secondary-opaque);
+
+    --color-text-primary: var(--color-text-primary);
+    --color-text-secondary: var(--color-text-secondary);
+    --color-text-tertiary: var(--color-text-tertiary);
+
+    --color-accent-primary: var(--color-accent-primary);
+    --color-accent-hover: var(--color-accent-hover);
+
+    --color-border-primary: var(--color-border-primary);
+    --color-border-accent: var(--color-border-accent);
+
+    --color-success: var(--color-success);
+    --color-danger: var(--color-danger);
+}
+
 @layer components {
     .auth-input {
-        @apply bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white outline-hidden focus:border-blue-500 transition-colors;
+        @apply bg-bg-secondary border border-border-primary rounded-lg px-4 py-2 text-text-primary outline-hidden focus:border-accent-primary transition-colors;
     }
 
     /* Estilo para el scroll interno del formulario si es necesario */
     .custom-scrollbar::-webkit-scrollbar {
         width: 5px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-track {
-        @apply bg-gray-900;
+        @apply bg-bg-primary;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        @apply bg-gray-700 rounded-full;
+        @apply bg-bg-tertiary rounded-full;
     }
 }

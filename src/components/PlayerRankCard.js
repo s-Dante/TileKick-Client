@@ -11,8 +11,8 @@ export class PlayerRankCard extends Component {
 
         // Estilos especiales para el top 3
         const isTop3 = position <= 3;
-        let positionColor = 'text-gray-500';
-        let borderColor = 'border-gray-700/50';
+        let positionColor = 'text-text-secondary';
+        let borderColor = 'border-border-primary';
 
         if (position === 1) {
             positionColor = 'text-yellow-400';
@@ -25,48 +25,68 @@ export class PlayerRankCard extends Component {
             borderColor = 'border-amber-700/50 shadow-[0_0_15px_rgba(180,83,9,0.2)]';
         }
 
+        const styles = {
+            card: `group relative bg-bg-secondary-opaque rounded-2xl p-4 md:p-6 border ${borderColor} hover:bg-bg-tertiary transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:gap-6 overflow-visible mb-4`,
+            posToken: `text-3xl md:text-5xl font-black ${positionColor} w-12 text-center flex-shrink-0`,
+            imgWrapper: "relative flex-shrink-0",
+            profileImg: `w-16 h-16 md:w-20 md:h-20 rounded-full border-2 ${isTop3 ? 'border-current ' + positionColor : 'border-border-primary'} object-cover`,
+            badge: "absolute -bottom-2 -right-2 bg-bg-primary text-xs font-bold px-2 py-1 rounded-md border border-border-primary shadow-sm flex items-center gap-1 z-10",
+            infoBox: "flex-1 text-center md:text-left min-w-0",
+            infoName: "text-xl font-bold text-text-primary truncate",
+            infoUser: "text-accent-primary text-sm truncate",
+            statsBox: "flex flex-row md:flex-col gap-4 md:gap-1 text-sm md:border-l border-border-primary md:pl-6",
+            statRow: "flex items-center gap-2",
+            statLabelW: "text-success font-bold uppercase tracking-wider text-xs",
+            statLabelL: "text-danger font-bold uppercase tracking-wider text-xs",
+            statValue: "text-text-primary font-medium",
+            eloBox: "bg-bg-primary/80 px-4 py-3 rounded-xl border border-border-primary flex flex-col items-center justify-center min-w-[100px]",
+            eloLabel: "text-text-secondary text-xs uppercase tracking-widest font-bold mb-1",
+            eloValue: `text-2xl font-black text-text-primary ${isTop3 ? positionColor : ''}`,
+            hoverGlow: "absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] rounded-2xl pointer-events-none"
+        };
+
         return `
-            <div class="group relative bg-gray-800/60 rounded-2xl p-4 md:p-6 border ${borderColor} hover:bg-gray-750 transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:gap-6 overflow-visible mb-4">
+            <div class="${styles.card}">
                 
                 <!-- Número de Posición -->
-                <div class="text-3xl md:text-5xl font-black ${positionColor} w-12 text-center flex-shrink-0">
+                <div class="${styles.posToken}">
                     #${position}
                 </div>
 
                 <!-- Foto y Badge -->
-                <div class="relative flex-shrink-0">
-                    <img src="${player.profilePic}" alt="${player.username}" class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 ${isTop3 ? 'border-current ' + positionColor : 'border-gray-600'} object-cover">
-                    <div class="absolute -bottom-2 -right-2 bg-gray-900 text-xs font-bold px-2 py-1 rounded-md border border-gray-700 shadow-sm flex items-center gap-1 z-10">
+                <div class="${styles.imgWrapper}">
+                    <img src="${player.profilePic}" alt="${player.username}" class="${styles.profileImg}">
+                    <div class="${styles.badge}">
                         ${player.badge}
                     </div>
                 </div>
 
                 <!-- Info Principal -->
-                <div class="flex-1 text-center md:text-left min-w-0">
-                    <h3 class="text-xl font-bold text-white truncate">${player.fullName}</h3>
-                    <p class="text-blue-400 text-sm truncate">${player.username}</p>
+                <div class="${styles.infoBox}">
+                    <h3 class="${styles.infoName}">${player.fullName}</h3>
+                    <p class="${styles.infoUser}">${player.username}</p>
                 </div>
 
-                <!-- Estadísticas (Victorias/Derrotas) - "fuera pero dentro de la tarjeta" -->
-                <div class="flex flex-row md:flex-col gap-4 md:gap-1 text-sm md:border-l border-gray-700 md:pl-6">
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-400 font-bold uppercase tracking-wider text-xs">V</span>
-                        <span class="text-white font-medium">${player.wins}</span>
+                <!-- Estadísticas (Victorias/Derrotas) -->
+                <div class="${styles.statsBox}">
+                    <div class="${styles.statRow}">
+                        <span class="${styles.statLabelW}">V</span>
+                        <span class="${styles.statValue}">${player.wins}</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-400 font-bold uppercase tracking-wider text-xs">D</span>
-                        <span class="text-white font-medium">${player.losses}</span>
+                    <div class="${styles.statRow}">
+                        <span class="${styles.statLabelL}">D</span>
+                        <span class="${styles.statValue}">${player.losses}</span>
                     </div>
                 </div>
 
                 <!-- Puntaje ELO -->
-                <div class="bg-gray-900/80 px-4 py-3 rounded-xl border border-gray-700 flex flex-col items-center justify-center min-w-[100px]">
-                    <span class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">ELO</span>
-                    <span class="text-2xl font-black text-white ${isTop3 ? positionColor : ''}">${player.elo}</span>
+                <div class="${styles.eloBox}">
+                    <span class="${styles.eloLabel}">ELO</span>
+                    <span class="${styles.eloValue}">${player.elo}</span>
                 </div>
 
                 <!-- Decoración de fondo en hover -->
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer rounded-2xl pointer-events-none"></div>
+                <div class="${styles.hoverGlow}"></div>
             </div>
         `;
     }

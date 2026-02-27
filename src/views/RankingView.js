@@ -30,53 +30,52 @@ export class RankingView extends Component {
             return card.render();
         }).join('');
 
+        const styles = {
+            container: "h-full flex flex-col p-8 bg-bg-primary-opaque relative overflow-hidden",
+            bgGlowRight: "absolute top-0 right-0 w-96 h-96 bg-accent-primary/10 rounded-full blur-[100px] pointer-events-none",
+            bgGlowLeft: "absolute bottom-0 left-0 w-96 h-96 bg-warning/5 rounded-full blur-[100px] pointer-events-none",
+            header: "flex items-center justify-between mb-8 z-10 border-b border-border-primary/50 pb-6",
+            tabList: "flex gap-6 text-sm font-medium",
+            tabActive: "text-accent-primary border-b-2 border-accent-primary pb-1",
+            tabInactive: "text-text-secondary hover:text-text-primary transition-colors pb-1",
+            statsBox: "hidden md:flex gap-4",
+            statPill: "bg-bg-secondary-opaque px-4 py-2 rounded-lg border border-border-primary shadow-sm flex items-center gap-2",
+            statLabel: "text-text-secondary text-xs",
+            statValue: "text-text-primary font-bold",
+            listWrapper: "flex-1 overflow-y-auto pr-2 custom-scrollbar z-10",
+            listSpace: "space-y-4"
+        };
+
         const rankingContent = `
-            <div class="h-full flex flex-col p-8 bg-gray-900/40 relative overflow-hidden">
+            <div class="${styles.container}">
                 <!-- Efectos de fondo -->
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-                <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+                <div class="${styles.bgGlowRight}"></div>
+                <div class="${styles.bgGlowLeft}"></div>
                 
                 <!-- Encabezado del Ranking -->
-                <div class="flex items-center justify-between mb-8 z-10 border-b border-gray-700/50 pb-6">
+                <div class="${styles.header}">
                     <div>
-                        <ul class="flex gap-6 text-sm font-medium">
-                            <li><button class="text-blue-400 border-b-2 border-blue-400 pb-1">Global</button></li>
-                            <li><button class="text-gray-400 hover:text-white transition-colors pb-1">Amigos</button></li>
+                        <ul class="${styles.tabList}">
+                            <li><button class="${styles.tabActive}">Global</button></li>
+                            <li><button class="${styles.tabInactive}">Amigos</button></li>
                         </ul>
                     </div>
                     <!-- Stats Resumen -->
-                    <div class="hidden md:flex gap-4">
-                        <div class="bg-gray-800/80 px-4 py-2 rounded-lg border border-gray-700 shadow-sm flex items-center gap-2">
-                            <span class="text-gray-400 text-xs">Jugadores Activos</span>
-                            <span class="text-white font-bold">12,458</span>
+                    <div class="${styles.statsBox}">
+                        <div class="${styles.statPill}">
+                            <span class="${styles.statLabel}">Jugadores Activos</span>
+                            <span class="${styles.statValue}">12,458</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Lista de Jugadores -->
-                <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar z-10">
-                    <div class="space-y-4">
+                <div class="${styles.listWrapper}">
+                    <div class="${styles.listSpace}">
                         ${rankingCardsHTML}
                     </div>
                 </div>
             </div>
-            
-            <style>
-                .custom-scrollbar::-webkit-scrollbar {
-                    width: 6px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-track {
-                    background: rgba(31, 41, 55, 0.5);
-                    border-radius: 4px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(75, 85, 99, 0.8);
-                    border-radius: 4px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: rgba(107, 114, 128, 1);
-                }
-            </style>
         `;
 
         return MainLayout(rankingContent, "Ranking Global");

@@ -21,23 +21,37 @@ export class ChangePswdView extends Component {
 
     async render() {
         const layout = new AuthLayout();
+
+        const styles = {
+            container: "animate-fade-in",
+            backBtn: "text-text-secondary hover:text-text-primary mb-4 flex items-center gap-2 transition-colors",
+            title: "text-3xl font-bold text-text-primary mb-2",
+            subtitle: "text-text-secondary mb-8",
+            form: "space-y-4",
+            input: "auth-input w-full",
+            inputToken: "auth-input w-full text-center text-2xl tracking-[1em] font-bold",
+            submitBtn: "w-full bg-accent-primary hover:bg-accent-hover text-text-primary font-bold py-3 rounded-lg mt-4 transition-all",
+            submitBtnSuccess: "w-full bg-success hover:opacity-90 text-text-primary font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
+            highlight: "text-accent-primary"
+        };
+
         let stepContent = '';
 
         switch (this.state.currentStep) {
             case this.STEPS.EMAIL:
-                stepContent = this._renderEmailStep();
+                stepContent = this._renderEmailStep(styles);
                 break;
             case this.STEPS.TOKEN:
-                stepContent = this._renderTokenStep();
+                stepContent = this._renderTokenStep(styles);
                 break;
             case this.STEPS.RESET:
-                stepContent = this._renderResetStep();
+                stepContent = this._renderResetStep(styles);
                 break;
         }
 
         return layout.render(`
-            <div class="animate-fade-in">
-                <button id="btn-back-step" class="text-gray-500 hover:text-white mb-4 flex items-center gap-2 transition-colors ${this.state.currentStep === 1 ? 'invisible' : ''}">
+            <div class="${styles.container}">
+                <button id="btn-back-step" class="${styles.backBtn} ${this.state.currentStep === 1 ? 'invisible' : ''}">
                     ← Volver al paso anterior
                 </button>
                 ${stepContent}
@@ -45,44 +59,44 @@ export class ChangePswdView extends Component {
         `);
     }
 
-    _renderEmailStep() {
+    _renderEmailStep(styles) {
         return `
-            <h2 class="text-3xl font-bold text-white mb-2">Recuperar acceso</h2>
-            <p class="text-gray-400 mb-8">Ingresa tu correo y te enviaremos un código de seguridad.</p>
-            <form id="form-email" class="space-y-4">
-                <input type="email" name="email" required class="auth-input w-full" placeholder="tu-correo@ejemplo.com" value="${this.state.email}">
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg mt-4 transition-all">
+            <h2 class="${styles.title}">Recuperar acceso</h2>
+            <p class="${styles.subtitle}">Ingresa tu correo y te enviaremos un código de seguridad.</p>
+            <form id="form-email" class="${styles.form}">
+                <input type="email" name="email" required class="${styles.input}" placeholder="tu-correo@ejemplo.com" value="${this.state.email}">
+                <button type="submit" class="${styles.submitBtn}">
                     Enviar código
                 </button>
             </form>
         `;
     }
 
-    _renderTokenStep() {
+    _renderTokenStep(styles) {
         return `
-            <h2 class="text-3xl font-bold text-white mb-2">Verifica tu correo</h2>
-            <p class="text-gray-400 mb-8">Hemos enviado un código a <span class="text-blue-400">${this.state.email}</span>. Ingrésalo a continuación.</p>
-            <form id="form-token" class="space-y-4">
+            <h2 class="${styles.title}">Verifica tu correo</h2>
+            <p class="${styles.subtitle}">Hemos enviado un código a <span class="${styles.highlight}">${this.state.email}</span>. Ingrésalo a continuación.</p>
+            <form id="form-token" class="${styles.form}">
                 <div class="flex justify-center gap-2">
                     <input type="text" name="token" maxlength="6" required 
-                        class="auth-input w-full text-center text-2xl tracking-[1em] font-bold" 
+                        class="${styles.inputToken}" 
                         placeholder="000000">
                 </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg mt-4 transition-all">
+                <button type="submit" class="${styles.submitBtn}">
                     Verificar código
                 </button>
             </form>
         `;
     }
 
-    _renderResetStep() {
+    _renderResetStep(styles) {
         return `
-            <h2 class="text-3xl font-bold text-white mb-2">Nueva contraseña</h2>
-            <p class="text-gray-400 mb-8">Crea una contraseña segura que no uses en otros sitios.</p>
-            <form id="form-reset" class="space-y-4">
-                <input type="password" name="password" required class="auth-input w-full" placeholder="Nueva contraseña">
-                <input type="password" name="password_confirmation" required class="auth-input w-full" placeholder="Confirma contraseña">
-                <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg mt-4 transition-all shadow-lg shadow-green-900/20">
+            <h2 class="${styles.title}">Nueva contraseña</h2>
+            <p class="${styles.subtitle}">Crea una contraseña segura que no uses en otros sitios.</p>
+            <form id="form-reset" class="${styles.form}">
+                <input type="password" name="password" required class="${styles.input}" placeholder="Nueva contraseña">
+                <input type="password" name="password_confirmation" required class="${styles.input}" placeholder="Confirma contraseña">
+                <button type="submit" class="${styles.submitBtnSuccess}">
                     Actualizar contraseña
                 </button>
             </form>
