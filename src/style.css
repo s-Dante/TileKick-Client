@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@layer components {
+    .auth-input {
+        @apply bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white outline-hidden focus:border-blue-500 transition-colors;
+    }
+
+    /* Estilo para el scroll interno del formulario si es necesario */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-gray-900;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-gray-700 rounded-full;
+    }
+}

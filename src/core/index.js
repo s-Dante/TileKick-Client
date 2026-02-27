@@ -1,4 +1,5 @@
 export * from './config.js';
 export * from './eventsBus.js';
-export {navigate, registerRoute} from './router.js';
-export * from './state.js';
+export * from './Router.js'
+export * from './State.js';
+export * from './Component.js';

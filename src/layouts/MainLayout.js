@@ -1,4 +1,4 @@
-import { navigate } from '@/core';
+import { navigateTo } from '@/core';
 
 import { Sidebar } from '@/components';
 

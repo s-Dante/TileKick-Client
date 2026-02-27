@@ -1,32 +1,21 @@
-import { registerRoute, navigate } from '@/core';
+import './style.css';
+import { Router } from '@/core';
 
-import {
-    LandingView,
-    LogInView,
-    SignInView,
-    ChangePswdView,
-    ProfileView,
-    ConfigurationView,
-    MainMenuView,
-    RankingView,
-    GameView
-} from '@/views';
+import { LandingView } from '@/views';
 
-// Register routes
-registerRoute('landing', LandingView);
+import { LogInView } from '@/views';
+import { SignInView } from '@/views';
+import { ChangePswdView } from '@/views';
 
-registerRoute('login', LogInView);
-registerRoute('signin', SignInView);
-registerRoute('changePswd', ChangePswdView);
+// Definición de rutas con sus respectivas clases de vista
+const routes = [
+    { path: "/", view: LandingView },
+    { path: "/auth/login", view: LogInView },
+    { path: "/auth/signin", view: SignInView },
+    { path: "/auth/recovery", view: ChangePswdView },
+];
 
-registerRoute('profile', ProfileView);
-registerRoute('configuration', ConfigurationView);
-registerRoute('mainMenu', MainMenuView);
-registerRoute('ranking', RankingView);
-
-registerRoute('game', GameView);
-
-// Initialize the app
-document.addEventListener('DOMContentLoaded', () => {
-    navigate('landing');
+// Inicializar el router
+document.addEventListener("DOMContentLoaded", () => {
+    new Router(routes);
 });

@@ -1,30 +1,24 @@
-import { navigate } from '@/core'
+import { Component } from '../core/Component.js';
 
-export function Sidebar() {
-    const sidebar = document.createElement('aside');
-    sidebar.className = 'aside';
+export class Sidebar extends Component {
+    render() {
+        return `
+            <aside class="w-64 h-screen bg-gray-800 text-white p-4">
+                <nav>
+                    <ul>
+                        <li><a href="/" data-link class="block p-2 hover:bg-gray-700">Inicio</a></li>
+                        <li><a href="/profile" data-link class="block p-2 hover:bg-gray-700">Perfil</a></li>
+                    </ul>
+                </nav>
+                <button id="btn-logout" class="mt-4 bg-red-500 px-4 py-2 rounded">Salir</button>
+            </aside>
+        `;
+    }
 
-    const title = document.createElement('span');
-    title.textContent = 'TILEKICK';
-    sidebar.appendChild(title);
-
-    const links = document.createElement('ul');
-    sidebar.appendChild(links);
-
-    const linkData = [
-        { name: 'Profile', path: navigate('profile') },
-        { name: 'Configuration', path: navigate('configuration') },
-        { name: 'Main Menu', path: navigate('mainMenu') },
-        { name: 'Ranking', path: navigate('ranking') },
-        // { name: 'Exit', path: navigate('exit') },
-    ];
-
-    linkData.forEach(({ name, path }) => {
-        const link = document.createElement('li');
-        link.textContent = name;
-        link.addEventListener('click', () => navigate(path));
-        links.appendChild(link);
-    });
-
-    return sidebar;
+    mounted() {
+        const btn = document.getElementById('btn-logout');
+        if (btn) {
+            btn.addEventListener('click', () => console.log('Cerrando sesión...'));
+        }
+    }
 }
