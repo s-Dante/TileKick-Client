@@ -6,12 +6,9 @@ export function LandingView(container) {
         <h1>TILEKICK</h1>
         <p>Arma tu estrategia y gana el torneo.</p>
     `;
-    const button = Button('Jugar', 'play-button', () => navigate('login'));
+    const button = Button('Jugar', 'play-button', () => navigate('profile'));
     container.appendChild(button);
 
-    container.appendChild(`
-        Hola
-    `);
 
     const info = [
         LandingPageInfo('👥', 'Multijugador Online'),
@@ -19,4 +16,6 @@ export function LandingView(container) {
         LandingPageInfo('🤖', 'Tu vs la IA'),
         LandingPageInfo('🏆', 'Ranking Global'),
     ];
+
+    info.forEach(infoItem => container.appendChild(infoItem));
 };
