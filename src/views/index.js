@@ -1,12 +1,12 @@
-export * from './LandingView.js';
+export { LandingView } from './LandingView.js';
 
-export * from './auth/LogInView.js';
-export * from './auth/SignInView.js';
-export * from './auth/PasswordResetView.js';
+export { LogInView } from './auth/LogInView.js';
+export { SignInView } from './auth/SignInView.js';
+export { ChangePswdView } from './auth/ChangePswdView.js';
 
-export * from './ProfileView.js';
-export * from './ConfigurationView.js';
-export * from './MainMenuView.js';
-export * from './RankingView.js';
+export { ProfileView } from './ProfileView.js';
+export { ConfigurationView } from './ConfigurationView.js';
+export { MainMenuView } from './MainMenuView.js';
+export { RankingView } from './RankingView.js';
 
-export * from './GameView.js';
+export { GameView } from './GameView.js';

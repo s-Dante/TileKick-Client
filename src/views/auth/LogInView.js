@@ -1,31 +1,26 @@
+import { navigate } from '@/core';
+
 export function LogInView(container) {
-    const title = document.createElement('h1');
-    title.textContent = 'Welcome to TileKick!';
-    container.appendChild(title);
+    container.innerHTML = `
+        <div class:"auth-container">
+            <h1>TILEKICK</h1>
+            <form id="login-form">
+                <input type="email" placeholder="Correo" required>
+                <input type="password" placeholder="Contraseña" required>
+                <p id="go-reset" class="link">Olvide mi contraseña</p>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <span>o</span>
+            <!-- Botones de Google y Facebook -->
+            <p>¿No tienes cuenta? <span id="go-signin" class="link">Registrate</span><p>
+        </div>
+    `;
 
-    const description = document.createElement('p');
-    description.textContent = 'Your ultimate tool for managing and organizing your tile collections.';
-    container.appendChild(description);
-
-    const featuresList = document.createElement('ul');
-    const features = [
-        'Easily catalog your tile collection',
-        'Create custom tile sets',
-        'Share your collections with friends',
-        'Discover new tiles and trends'
-    ];
-    features.forEach(feature => {
-        const listItem = document.createElement('li');
-        listItem.textContent = feature;
-        featuresList.appendChild(listItem);
+    container.querySelector('login-form').addEventListeener('submit', (e) => {
+        e.preventDefault();
+        navigate('profile');
     });
-    container.appendChild(featuresList);
 
-    const getStartedButton = document.createElement('button');
-    getStartedButton.textContent = 'Get Started';
-    getStartedButton.addEventListener('click', () => {
-        // Navigate to the login view or registration view
-        navigate('login');
-    });
-    container.appendChild(getStartedButton);
+    container.querySelector('#go-signin').addEventListeener('click', () => navigate('signin'));
+    container.querySelector('#go-reset').addEventListeener('click', () => navigate('changePswd'));
 }   

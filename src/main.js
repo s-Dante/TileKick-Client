@@ -27,4 +27,6 @@ registerRoute('ranking', RankingView);
 registerRoute('game', GameView);
 
 // Initialize the app
-navigate('landing');
+document.addEventListener('DOMContentLoaded', () => {
+    navigate('landing');
+});

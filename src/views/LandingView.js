@@ -1,5 +1,5 @@
-import { navigate } from '../core/router.js';
-import { Button } from '../components/Button.js';
+import { navigate } from '@core';
+import { Button, LandingPageInfo } from '@/components';
 
 export function LandingView(container) {
     container.innerHTML = `
@@ -8,4 +8,15 @@ export function LandingView(container) {
     `;
     const button = Button('Jugar', 'play-button', () => navigate('login'));
     container.appendChild(button);
+
+    container.appendChild(`
+        Hola
+    `);
+
+    const info = [
+        LandingPageInfo('👥', 'Multijugador Online'),
+        LandingPageInfo('🫂', 'Multijugador Local'),
+        LandingPageInfo('🤖', 'Tu vs la IA'),
+        LandingPageInfo('🏆', 'Ranking Global'),
+    ];
 };

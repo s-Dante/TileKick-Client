@@ -1,7 +1,7 @@
-export * from './AI.js';
-export * from './Ball.js';
-export * from './GameEngine.js';
-export * from './Grid.js';
-export * from './Multiplayer.js';
-export * from './Player.js';
-export * from './TurnSystem.js';
+export { AI } from './AI.js';
+export { Ball } from './Ball.js';
+export { GameEngine } from './GameEngine.js';
+export { Grid } from './Grid.js';
+export { Multiplayer } from './Multiplayer.js';
+export { Player } from './Player.js';
+export { TurnSystem } from './TurnSystem.js';

@@ -1,0 +1,29 @@
+{
+  "name": "tilekick-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-Dante/TileKick-Client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-Dante/TileKick-Client/issues"
+  },
+  "homepage": "https://github.com/s-Dante/TileKick-Client#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.1.0",
+    "path": "^0.12.7",
+    "three": "^0.172.0"
+  }
+}
