@@ -4,12 +4,12 @@ export function MainLayout(contentHTML, title = '') {
     const sidebar = new Sidebar();
 
     const styles = {
-        container: "flex h-screen bg-bg-primary font-sans overflow-hidden",
+        container: "flex h-screen bg-bg-base font-sans overflow-hidden",
         main: "flex-1 p-4 md:p-8 overflow-y-auto custom-scrollbar",
         wrapper: "max-w-6xl mx-auto h-full flex flex-col",
         header: "mb-8",
-        title: "text-3xl font-bold text-text-primary tracking-tight",
-        cardContainer: "flex-1 bg-bg-secondary-opaque backdrop-blur-md border border-border-primary/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+        title: "text-3xl font-bold text-text-base tracking-tight",
+        cardContainer: "flex-1 bg-primary-base/80 backdrop-blur-md border border-secondary-base/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
     };
 
     return `

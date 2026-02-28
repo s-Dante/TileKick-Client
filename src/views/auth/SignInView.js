@@ -8,26 +8,26 @@ export class SignInView extends Component {
 
         const styles = {
             container: "animate-slide-up max-h-[90vh] overflow-y-auto pr-2 custom-scrollbar",
-            title: "text-3xl font-bold text-text-primary mb-2 text-center md:text-left",
-            subtitle: "text-text-secondary mb-6 text-center md:text-left",
+            title: "text-3xl font-bold text-text-base mb-2 text-center md:text-left",
+            subtitle: "text-text-dark mb-6 text-center md:text-left",
             form: "space-y-4",
             avatarGroup: "flex flex-col items-center md:items-start mb-6",
-            label: "text-text-secondary text-sm mb-2",
-            labelBlock: "block text-text-secondary text-sm mb-1",
-            avatarPreview: "w-20 h-20 rounded-[20px] bg-bg-secondary border-2 border-dashed border-border-primary flex items-center justify-center overflow-hidden text-2xl text-text-secondary",
-            avatarBtn: "bg-bg-secondary hover:bg-bg-tertiary text-text-primary text-xs py-2 px-4 border border-border-primary rounded-lg transition-colors",
+            label: "text-text-dark text-sm mb-2",
+            labelBlock: "block text-text-dark text-sm mb-1",
+            avatarPreview: "w-20 h-20 rounded-[20px] bg-primary-base border-2 border-dashed border-secondary-base flex items-center justify-center overflow-hidden text-2xl text-text-dark",
+            avatarBtn: "bg-primary-base hover:bg-secondary-base text-text-base text-xs py-2 px-4 border border-secondary-base rounded-lg transition-colors",
             gridNames: "grid grid-cols-1 md:grid-cols-2 gap-4",
             gridColSpan2: "md:col-span-2",
             input: "auth-input w-full",
-            submitBtn: "w-full bg-accent-primary hover:bg-accent-hover text-text-primary font-bold py-3 rounded-lg mt-6 transition-all shadow-lg",
+            submitBtn: "w-full bg-accent1-base hover:bg-accent1-dark text-text-base font-bold py-3 rounded-lg mt-6 transition-all shadow-lg",
             dividerContainer: "relative my-6",
             dividerLineWrapper: "absolute inset-0 flex items-center",
-            dividerLine: "w-full border-t border-border-primary",
+            dividerLine: "w-full border-t border-secondary-base",
             dividerTextWrapper: "relative flex justify-center text-sm uppercase",
-            dividerText: "bg-bg-primary px-2 text-text-secondary font-bold tracking-tighter",
+            dividerText: "bg-bg-base px-2 text-text-dark font-bold tracking-tighter",
             socialContainer: "flex flex-col gap-2",
-            footerText: "mt-6 text-center text-text-secondary pb-4",
-            footerLink: "text-accent-primary font-bold hover:text-accent-hover transition-colors"
+            footerText: "mt-6 text-center text-text-dark pb-4",
+            footerLink: "text-accent1-base font-bold hover:text-accent1-light transition-colors"
         };
 
         const signInFormHTML = `

@@ -24,15 +24,15 @@ export class ChangePswdView extends Component {
 
         const styles = {
             container: "animate-fade-in",
-            backBtn: "text-text-secondary hover:text-text-primary mb-4 flex items-center gap-2 transition-colors",
-            title: "text-3xl font-bold text-text-primary mb-2",
-            subtitle: "text-text-secondary mb-8",
+            backBtn: "text-text-dark hover:text-text-base mb-4 flex items-center gap-2 transition-colors",
+            title: "text-3xl font-bold text-text-base mb-2",
+            subtitle: "text-text-dark mb-8",
             form: "space-y-4",
             input: "auth-input w-full",
             inputToken: "auth-input w-full text-center text-2xl tracking-[1em] font-bold",
-            submitBtn: "w-full bg-accent-primary hover:bg-accent-hover text-text-primary font-bold py-3 rounded-lg mt-4 transition-all",
-            submitBtnSuccess: "w-full bg-success hover:opacity-90 text-text-primary font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
-            highlight: "text-accent-primary"
+            submitBtn: "w-full bg-accent1-base hover:bg-accent1-dark text-text-base font-bold py-3 rounded-lg mt-4 transition-all",
+            submitBtnSuccess: "w-full bg-alert-success hover:opacity-90 text-text-base font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
+            highlight: "text-accent1-base"
         };
 
         let stepContent = '';

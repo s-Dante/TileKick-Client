@@ -21,27 +21,25 @@ export class RankingView extends Component {
     }
 
     render() {
-        // Ordenar jugadores por ELO de mayor a menor
         const sortedPlayers = [...this.state.players].sort((a, b) => b.elo - a.elo);
 
-        // Generar las cards de ranking
         const rankingCardsHTML = sortedPlayers.map((player, index) => {
             const card = new PlayerRankCard({ position: index + 1, player });
             return card.render();
         }).join('');
 
         const styles = {
-            container: "h-full flex flex-col p-8 bg-bg-primary-opaque relative overflow-hidden",
-            bgGlowRight: "absolute top-0 right-0 w-96 h-96 bg-accent-primary/10 rounded-full blur-[100px] pointer-events-none",
+            container: "h-full flex flex-col p-8 bg-bg-base/60 relative overflow-hidden",
+            bgGlowRight: "absolute top-0 right-0 w-96 h-96 bg-accent1-base/10 rounded-full blur-[100px] pointer-events-none",
             bgGlowLeft: "absolute bottom-0 left-0 w-96 h-96 bg-warning/5 rounded-full blur-[100px] pointer-events-none",
-            header: "flex items-center justify-between mb-8 z-10 border-b border-border-primary/50 pb-6",
+            header: "flex items-center justify-between mb-8 z-10 border-b border-secondary-base/50 pb-6",
             tabList: "flex gap-6 text-sm font-medium",
-            tabActive: "text-accent-primary border-b-2 border-accent-primary pb-1",
-            tabInactive: "text-text-secondary hover:text-text-primary transition-colors pb-1",
+            tabActive: "text-accent1-base border-b-2 border-accent-primary pb-1",
+            tabInactive: "text-text-dark hover:text-text-base transition-colors pb-1",
             statsBox: "hidden md:flex gap-4",
-            statPill: "bg-bg-secondary-opaque px-4 py-2 rounded-lg border border-border-primary shadow-sm flex items-center gap-2",
-            statLabel: "text-text-secondary text-xs",
-            statValue: "text-text-primary font-bold",
+            statPill: "bg-primary-base/80 px-4 py-2 rounded-lg border border-secondary-base shadow-sm flex items-center gap-2",
+            statLabel: "text-text-dark text-xs",
+            statValue: "text-text-base font-bold",
             listWrapper: "flex-1 overflow-y-auto pr-2 custom-scrollbar z-10",
             listSpace: "space-y-4"
         };

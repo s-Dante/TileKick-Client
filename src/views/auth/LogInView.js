@@ -8,22 +8,22 @@ export class LogInView extends Component {
 
         const styles = {
             container: "animate-slide-up",
-            title: "text-3xl font-bold text-text-primary mb-2 text-center md:text-left",
-            subtitle: "text-text-secondary mb-8 text-center md:text-left",
+            title: "text-3xl font-bold text-text-base mb-2 text-center md:text-left",
+            subtitle: "text-text-dark mb-8 text-center md:text-left",
             form: "space-y-4",
-            label: "block text-text-secondary text-sm mb-2",
-            labelFlex: "text-text-secondary text-sm",
-            input: "w-full bg-bg-secondary border border-border-primary rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-border-accent transition-colors",
-            link: "text-accent-primary text-sm hover:text-accent-hover hover:underline",
-            submitBtn: "w-full bg-accent-primary hover:bg-accent-hover text-text-primary font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
+            label: "block text-text-dark text-sm mb-2",
+            labelFlex: "text-text-dark text-sm",
+            input: "w-full bg-primary-base border border-secondary-base rounded-lg px-4 py-3 text-text-base focus:outline-none focus:border-accent1-base transition-colors",
+            link: "text-accent1-base text-sm hover:text-accent1-light hover:underline",
+            submitBtn: "w-full bg-accent1-base hover:bg-accent1-dark text-text-base font-bold py-3 rounded-lg mt-4 transition-all shadow-lg",
             dividerContainer: "relative my-8",
             dividerLineWrapper: "absolute inset-0 flex items-center",
-            dividerLine: "w-full border-t border-border-primary",
+            dividerLine: "w-full border-t border-secondary-base",
             dividerTextWrapper: "relative flex justify-center text-sm uppercase",
-            dividerText: "bg-bg-primary px-2 text-text-secondary font-bold tracking-tighter",
+            dividerText: "bg-bg-base px-2 text-text-dark font-bold tracking-tighter",
             socialContainer: "flex flex-col gap-3",
-            footerText: "mt-8 text-center text-text-secondary",
-            footerLink: "text-accent-primary font-bold hover:text-accent-hover transition-colors"
+            footerText: "mt-8 text-center text-text-dark",
+            footerLink: "text-accent1-base font-bold hover:text-accent1-light transition-colors"
         };
 
         const loginFormHTML = `

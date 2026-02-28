@@ -4,18 +4,18 @@ export class Sidebar extends Component {
     render() {
         // Tailwind classes extracted and mapped to new semantic variables
         const styles = {
-            aside: "flex flex-col w-64 h-screen bg-bg-secondary border-r border-border-primary text-text-primary p-6 shadow-2xl z-20 relative transition-transform duration-300",
+            aside: "flex flex-col w-64 h-screen bg-primary-base border-r border-secondary-base text-text-base p-6 shadow-2xl z-20 relative transition-transform duration-300",
             logoContainer: "flex items-center justify-center mb-10 mt-2",
-            logoText: "text-4xl font-black text-text-primary tracking-tighter",
-            logoHighlight: "text-accent-primary",
+            logoText: "text-4xl font-black text-text-base tracking-tighter",
+            logoHighlight: "text-accent1-base",
             nav: "flex-1 space-y-2",
             ul: "space-y-3",
-            linkBox: "flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-bg-tertiary hover:text-accent-primary transition-all duration-200 group",
-            iconBox: "bg-bg-tertiary p-2 rounded-lg group-hover:bg-accent-primary/20 group-hover:text-accent-primary transition-colors",
+            linkBox: "flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-secondary-base hover:text-accent1-base transition-all duration-200 group",
+            iconBox: "bg-secondary-base p-2 rounded-lg group-hover:bg-accent1-base/20 group-hover:text-accent1-base transition-colors",
             iconSvg: "w-5 h-5",
             linkLabel: "font-medium",
-            logoutContainer: "mt-auto pt-6 border-t border-border-primary",
-            logoutBtn: "w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-danger/10 text-danger hover:bg-danger hover:text-white transition-all duration-300 group"
+            logoutContainer: "mt-auto pt-6 border-t border-secondary-base",
+            logoutBtn: "w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-alert-error/10 text-alert-error hover:bg-alert-error hover:text-white transition-all duration-300 group"
         };
 
         return `

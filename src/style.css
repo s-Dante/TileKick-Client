@@ -2,102 +2,203 @@
 
 @layer base {
 
-    /* Tema Oscuro (Por Defecto) */
+    /* Tema Oscuro (Defecto) - Monocromático Verde Bosque */
     :root {
-        --color-bg-primary: #24422b;
-        --color-bg-secondary: #192b38;
-        --color-bg-tertiary: #1b302d;
+        /* Fondos */
+        --color-bg-base: #0f1712;
+        --color-bg-gradient: #1b2e22;
 
-        --color-bg-primary-opaque: #24422b66;
-        --color-bg-secondary-opaque: #192b3866;
+        /* Monocromático Principal */
+        --color-primary-base: #24422b;
+        --color-primary-light: #355f3e;
+        --color-primary-dark: #152619;
 
-        --color-text-primary: #FFFFFF;
-        --color-text-secondary: #9CA3AF;
-        --color-text-tertiary: #D1D5DB;
+        /*Gradiente*/
+        --color-gradient-base: linear-gradient(180deg, rgba(242, 232, 207, 1) 0%, rgba(95, 114, 90, 1) 0%, rgba(36, 66, 43, 1) 56%);
+        --color-gradient-light: linear-gradient(180deg, rgba(242, 232, 207, 1) 0%, rgba(95, 114, 90, 1) 0%, rgba(36, 66, 43, 1) 56%);
+        --color-gradient-dark: linear-gradient(180deg, rgba(242, 232, 207, 1) 0%, rgba(95, 114, 90, 1) 0%, rgba(36, 66, 43, 1) 56%);
 
-        --color-accent-primary: #e37e4b;
-        --color-accent-hover: #c5563c;
+        /* Secundario */
+        --color-secondary-base: #1a2e1e;
+        --color-secondary-light: #28472f;
+        --color-secondary-dark: #0e1a11;
 
-        --color-border-primary: #24422b;
-        --color-border-accent: #e37e4b;
+        /* Terciario */
+        --color-tertiary-base: #111f14;
+        --color-tertiary-light: #1d3322;
+        --color-tertiary-dark: #070d08;
 
-        --color-success: #10B981;
-        --color-danger: #EF4444;
+        /* Acentos */
+        --color-accent1-base: #e37e4b;
+        --color-accent1-light: #ed9b74;
+        --color-accent1-dark: #c5563c;
+
+        --color-accent2-base: #facc15;
+        --color-accent2-light: #fef08a;
+        --color-accent2-dark: #eab308;
+
+        /* Textos */
+        --color-text-base: #f1f5f9;
+        --color-text-light: #ffffff;
+        --color-text-dark: #94a3b8;
+
+        --color-text-contrast-base: #0f1712;
+        --color-text-contrast-light: #1f2937;
+        --color-text-contrast-dark: #000000;
+
+        /* Alertas (Tonos Pastel suaves) */
+        --color-alert-info: #bfdbfe;
+        /* Azul pastel */
+        --color-alert-warning: #fef08a;
+        /* Amarillo pastel */
+        --color-alert-success: #bbf7d0;
+        /* Verde pastel */
+        --color-alert-error: #fecaca;
+        /* Rojo pastel */
+        --color-alert-light: #f8fafc;
+        /* Blanco suave */
+        --color-alert-dark: #334155;
+        /* Negro/gris suave */
     }
 
-    /* Tema Claro */
+    /* Tema Claro - Monocromático Gris/Azulado */
     [data-theme="light"] {
-        --color-bg-primary: #F3F4F6;
-        --color-bg-secondary: #FFFFFF;
-        --color-bg-tertiary: #E5E7EB;
+        --color-bg-base: #f8fafc;
+        --color-bg-gradient: #e2e8f0;
 
-        --color-bg-primary-opaque: rgba(243, 244, 246, 0.4);
-        --color-bg-secondary-opaque: rgba(255, 255, 255, 0.8);
+        --color-primary-base: #cbd5e1;
+        --color-primary-light: #f1f5f9;
+        --color-primary-dark: #94a3b8;
 
-        --color-text-primary: #111827;
-        --color-text-secondary: #4B5563;
-        --color-text-tertiary: #6B7280;
+        --color-secondary-base: #e2e8f0;
+        --color-secondary-light: #ffffff;
+        --color-secondary-dark: #cbd5e1;
 
-        --color-accent-primary: #2563EB;
-        --color-accent-hover: #1D4ED8;
+        --color-tertiary-base: #f1f5f9;
+        --color-tertiary-light: #ffffff;
+        --color-tertiary-dark: #e2e8f0;
 
-        --color-border-primary: #D1D5DB;
-        --color-border-accent: #2563EB;
+        --color-accent1-base: #3b82f6;
+        --color-accent1-light: #60a5fa;
+        --color-accent1-dark: #2563eb;
 
-        --color-success: #059669;
-        --color-danger: #DC2626;
+        --color-accent2-base: #f59e0b;
+        --color-accent2-light: #fbbf24;
+        --color-accent2-dark: #d97706;
+
+        --color-text-base: #1e293b;
+        --color-text-light: #334155;
+        --color-text-dark: #0f172a;
+
+        --color-text-contrast-base: #f8fafc;
+        --color-text-contrast-light: #ffffff;
+        --color-text-contrast-dark: #cbd5e1;
+
+        --color-alert-info: #dbeafe;
+        --color-alert-warning: #fef9c3;
+        --color-alert-success: #dcfce7;
+        --color-alert-error: #fee2e2;
+        --color-alert-light: #ffffff;
+        --color-alert-dark: #475569;
     }
 
-    /* Tema Extra (Neon/Cyberpunk) */
+    /* Tema Neon/Cyberpunk - Monocromático Morado Oscuro */
     [data-theme="neon"] {
-        --color-bg-primary: #09090b;
-        --color-bg-secondary: #18181b;
-        --color-bg-tertiary: #27272a;
+        --color-bg-base: #09090b;
+        --color-bg-gradient: #18181b;
 
-        --color-bg-primary-opaque: rgba(9, 9, 11, 0.6);
-        --color-bg-secondary-opaque: rgba(24, 24, 27, 0.8);
+        --color-primary-base: #27272a;
+        --color-primary-light: #3f3f46;
+        --color-primary-dark: #18181b;
 
-        --color-text-primary: #f4f4f5;
-        --color-text-secondary: #a1a1aa;
-        --color-text-tertiary: #e4e4e7;
+        --color-secondary-base: #18181b;
+        --color-secondary-light: #27272a;
+        --color-secondary-dark: #09090b;
 
-        /* Colores vivos */
-        --color-accent-primary: #d946ef;
-        --color-accent-hover: #c026d3;
+        --color-tertiary-base: #09090b;
+        --color-tertiary-light: #18181b;
+        --color-tertiary-dark: #000000;
 
-        --color-border-primary: #3f3f46;
-        --color-border-accent: #d946ef;
+        --color-accent1-base: #d946ef;
+        --color-accent1-light: #e879f9;
+        --color-accent1-dark: #c026d3;
 
-        --color-success: #22c55e;
-        --color-danger: #f43f5e;
+        --color-accent2-base: #06b6d4;
+        --color-accent2-light: #22d3ee;
+        --color-accent2-dark: #0891b2;
+
+        --color-text-base: #f4f4f5;
+        --color-text-light: #ffffff;
+        --color-text-dark: #a1a1aa;
+
+        --color-text-contrast-base: #09090b;
+        --color-text-contrast-light: #18181b;
+        --color-text-contrast-dark: #000000;
+
+        --color-alert-info: #a5f3fc;
+        --color-alert-warning: #fef08a;
+        --color-alert-success: #86efac;
+        --color-alert-error: #fca5a5;
+        --color-alert-light: #e4e4e7;
+        --color-alert-dark: #27272a;
     }
 }
 
 @theme {
-    --color-bg-primary: var(--color-bg-primary);
-    --color-bg-secondary: var(--color-bg-secondary);
-    --color-bg-tertiary: var(--color-bg-tertiary);
+    /* Fondos */
+    --color-bg-base: var(--color-bg-base);
+    --color-bg-gradient: var(--color-bg-gradient);
 
-    --color-bg-primary-opaque: var(--color-bg-primary-opaque);
-    --color-bg-secondary-opaque: var(--color-bg-secondary-opaque);
+    /* Primario */
+    --color-primary-base: var(--color-primary-base);
+    --color-primary-light: var(--color-primary-light);
+    --color-primary-dark: var(--color-primary-dark);
 
-    --color-text-primary: var(--color-text-primary);
-    --color-text-secondary: var(--color-text-secondary);
-    --color-text-tertiary: var(--color-text-tertiary);
+    /*Gradiente*/
+    --color-gradient-base: var(--color-gradient-base);
+    --color-gradient-light: var(--color-gradient-light);
+    --color-gradient-dark: var(--color-gradient-dark);
 
-    --color-accent-primary: var(--color-accent-primary);
-    --color-accent-hover: var(--color-accent-hover);
+    /* Secundario */
+    --color-secondary-base: var(--color-secondary-base);
+    --color-secondary-light: var(--color-secondary-light);
+    --color-secondary-dark: var(--color-secondary-dark);
 
-    --color-border-primary: var(--color-border-primary);
-    --color-border-accent: var(--color-border-accent);
+    /* Terciario */
+    --color-tertiary-base: var(--color-tertiary-base);
+    --color-tertiary-light: var(--color-tertiary-light);
+    --color-tertiary-dark: var(--color-tertiary-dark);
 
-    --color-success: var(--color-success);
-    --color-danger: var(--color-danger);
+    /* Acentos */
+    --color-accent1-base: var(--color-accent1-base);
+    --color-accent1-light: var(--color-accent1-light);
+    --color-accent1-dark: var(--color-accent1-dark);
+
+    --color-accent2-base: var(--color-accent2-base);
+    --color-accent2-light: var(--color-accent2-light);
+    --color-accent2-dark: var(--color-accent2-dark);
+
+    /* Texto */
+    --color-text-base: var(--color-text-base);
+    --color-text-light: var(--color-text-light);
+    --color-text-dark: var(--color-text-dark);
+
+    --color-text-contrast-base: var(--color-text-contrast-base);
+    --color-text-contrast-light: var(--color-text-contrast-light);
+    --color-text-contrast-dark: var(--color-text-contrast-dark);
+
+    /* Alertas */
+    --color-alert-info: var(--color-alert-info);
+    --color-alert-warning: var(--color-alert-warning);
+    --color-alert-success: var(--color-alert-success);
+    --color-alert-error: var(--color-alert-error);
+    --color-alert-light: var(--color-alert-light);
+    --color-alert-dark: var(--color-alert-dark);
 }
 
 @layer components {
     .auth-input {
-        @apply bg-bg-secondary border border-border-primary rounded-lg px-4 py-2 text-text-primary outline-hidden focus:border-accent-primary transition-colors;
+        @apply bg-primary-base border border-secondary-base rounded-lg px-4 py-2 text-text-base outline-hidden focus:border-accent1-base transition-colors;
     }
 
     /* Estilo para el scroll interno del formulario si es necesario */
@@ -106,10 +207,10 @@
     }
 
     .custom-scrollbar::-webkit-scrollbar-track {
-        @apply bg-bg-primary;
+        @apply bg-bg-base;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        @apply bg-bg-tertiary rounded-full;
+        @apply bg-tertiary-base rounded-full;
     }
 }

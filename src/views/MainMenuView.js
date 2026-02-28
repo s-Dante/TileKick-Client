@@ -28,34 +28,34 @@ export class PlaySelectionView extends Component {
 
         const styles = {
             modeBtnBase: "mode-btn text-left p-6 rounded-2xl border-2 transition-all duration-300 relative overflow-hidden group",
-            modeBtnActive: "bg-accent-primary/20 border-accent-primary shadow-[0_0_20px_rgba(59,130,246,0.3)]",
-            modeBtnInactive: "bg-bg-secondary-opaque border-border-primary hover:border-text-secondary hover:bg-bg-tertiary",
-            modeGlow: "absolute top-0 right-0 w-32 h-32 bg-accent-primary/10 rounded-full blur-[30px] -mr-10 -mt-10 transition-opacity",
-            modeIconActive: "text-accent-primary mb-4",
-            modeIconInactive: "text-text-secondary group-hover:text-text-primary mb-4",
-            modeTitle: "text-xl font-bold text-text-primary mb-2",
-            modeDesc: "text-text-tertiary text-sm leading-relaxed",
-            modeCheck: "absolute top-4 right-4 text-accent-primary",
+            modeBtnActive: "bg-accent1-base/20 border-accent-primary shadow-[0_0_20px_rgba(59,130,246,0.3)]",
+            modeBtnInactive: "bg-primary-base/80 border-secondary-base hover:border-text-secondary hover:bg-secondary-base",
+            modeGlow: "absolute top-0 right-0 w-32 h-32 bg-accent1-base/10 rounded-full blur-[30px] -mr-10 -mt-10 transition-opacity",
+            modeIconActive: "text-accent1-base mb-4",
+            modeIconInactive: "text-text-dark group-hover:text-text-base mb-4",
+            modeTitle: "text-xl font-bold text-text-base mb-2",
+            modeDesc: "text-text-dark/70 text-sm leading-relaxed",
+            modeCheck: "absolute top-4 right-4 text-accent1-base",
 
             mapBtnBase: "map-btn relative rounded-2xl overflow-hidden border-2 transition-all duration-300 group",
             mapBtnActive: "border-accent-primary shadow-[0_0_20px_rgba(59,130,246,0.3)] scale-[1.02]",
-            mapBtnInactive: "border-border-primary hover:border-text-secondary grayscale opacity-70 hover:grayscale-0 hover:opacity-100",
+            mapBtnInactive: "border-secondary-base hover:border-text-secondary grayscale opacity-70 hover:grayscale-0 hover:opacity-100",
             mapImgWrapper: "aspect-video w-full",
             mapImg: "w-full h-full object-cover",
             mapOverlay: "absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/40 to-transparent flex flex-col justify-end p-4",
-            mapTitle: "text-text-primary font-bold text-lg",
-            mapCheckWrap: "absolute top-3 right-3 bg-accent-primary text-text-primary rounded-full p-1 shadow-lg",
+            mapTitle: "text-text-base font-bold text-lg",
+            mapCheckWrap: "absolute top-3 right-3 bg-accent1-base text-text-base rounded-full p-1 shadow-lg",
 
-            container: "flex flex-col h-full bg-bg-primary-opaque relative",
+            container: "flex flex-col h-full bg-bg-base/60 relative",
             scrollContent: "flex-1 overflow-y-auto p-6 md:p-8 space-y-10 pb-32",
             sectionBase: "animate-fade-in",
             sectionHeader: "flex items-center gap-3 mb-6",
-            sectionNum: "bg-accent-primary text-text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold",
-            sectionTitle: "text-2xl font-bold text-text-primary tracking-tight",
+            sectionNum: "bg-accent1-base text-text-base w-8 h-8 rounded-full flex items-center justify-center font-bold",
+            sectionTitle: "text-2xl font-bold text-text-base tracking-tight",
             gridWrapper: "grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6",
 
-            fabArea: "absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-bg-primary via-bg-primary to-transparent border-t border-border-primary/50 flex justify-end transform transition-transform duration-500",
-            fabBtn: "bg-accent-primary hover:bg-accent-hover text-text-primary px-10 py-4 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-[1.02] transition-all flex items-center gap-3"
+            fabArea: "absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-bg-primary via-bg-primary to-transparent border-t border-secondary-base/50 flex justify-end transform transition-transform duration-500",
+            fabBtn: "bg-accent1-base hover:bg-accent1-dark text-text-base px-10 py-4 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-[1.02] transition-all flex items-center gap-3"
         };
 
         const modesHTML = modes.map(mode => `

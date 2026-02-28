@@ -5,7 +5,7 @@ export class SocialButton extends Component {
         const { provider, icon, colorClass } = this.props;
 
         const styles = {
-            btn: "w-full flex items-center justify-center gap-3 px-4 py-2 border border-border-primary rounded-lg text-text-primary hover:bg-bg-secondary transition-colors mb-3",
+            btn: "w-full flex items-center justify-center gap-3 px-4 py-2 border border-secondary-base rounded-lg text-text-base hover:bg-primary-base transition-colors mb-3",
             iconWrap: "text-xl"
         };
 

@@ -11,15 +11,15 @@ export class LandingView extends Component {
         ];
 
         const styles = {
-            container: "relative min-h-screen w-full bg-bg-primary overflow-hidden font-sans",
+            container: "relative min-h-screen w-full bg-bg-base overflow-hidden font-sans",
             modelWrapper: "absolute inset-0 z-0",
-            contentWrapper: "relative z-10 flex flex-col items-start justify-start min-h-screen px-10 md:px-20 pt-24 pb-16 bg-gradient-to-b from-bg-primary/20 via-bg-primary/60 to-bg-primary",
-            header: "mb-40 animate-fade-in max-w-3/4",
-            title: "text-6xl md:text-9xl font-black text-text-primary tracking-tight mb-3 drop-shadow-2xl text-left",
-            titleHighlight: "text-accent-primary",
-            subtitle: "block text-7xl text-accent-hover font-light italic tracking-wide text-lg md:text-xl text-left",
-            playBtnWrapper: "mb-16",
-            playBtn: "inline-block px-10 py-4 bg-accent-primary hover:bg-accent-hover text-text-primary text-lg font-bold rounded-full shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all hover:scale-105 active:scale-95",
+            contentWrapper: "relative z-10 flex flex-col items-start justify-start min-h-screen px-10 md:px-20 pt-24 pb-16 bg-gradient-to-b from-bg-base/20 via-bg-base/60 to-bg-base",
+            header: "mb-25 animate-fade-in max-w-3/4",
+            title: "text-6xl md:text-9xl font-black text-text-base tracking-tight mb-3 drop-shadow-2xl text-left",
+            titleHighlight: "text-accent1-base",
+            subtitle: "block text-7xl text-text-base font-light italic tracking-wide text-lg md:text-xl text-left",
+            playBtnWrapper: "mb-16 mt-5",
+            playBtn: "inline-block px-10 py-4 bg-primary-base hover:bg-primary-light text-text-base text-lg font-bold rounded-full transition-all hover:scale-105 active:scale-95",
             gridWrapper: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-3/4"
         };
 
@@ -28,9 +28,9 @@ export class LandingView extends Component {
                 
                 <div class="${styles.modelWrapper}">
                     <model-viewer 
-                        src="/publico/models/LandingPage/chess.glb" 
+                        src="/modelos/LandingPage/chess.glb" 
                         alt="TileKick 3D Preview"
-                        auto-rotate 
+                        auto-rotate
                         disable-zoom
                         style="width: 100%; height: 100%; --poster-color: transparent;"
                         shadow-intensity="1"

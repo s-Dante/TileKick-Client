@@ -24,11 +24,11 @@ export class ConfigurationView extends Component {
         const { activeTab } = this.state;
 
         const styles = {
-            container: "h-full flex flex-col md:flex-row bg-bg-primary-opaque",
-            sidebarMenu: "md:w-64 border-b md:border-b-0 md:border-r border-border-primary/50 p-6 flex flex-row md:flex-col gap-2 overflow-x-auto",
+            container: "h-full flex flex-col md:flex-row bg-bg-base/60",
+            sidebarMenu: "md:w-64 border-b md:border-b-0 md:border-r border-secondary-base/50 p-6 flex flex-row md:flex-col gap-2 overflow-x-auto",
             tabBtnBase: "tab-btn flex-none md:w-full text-left px-4 py-3 rounded-xl transition-all duration-200 font-medium whitespace-nowrap",
-            tabBtnActive: "bg-accent-primary/20 text-accent-primary",
-            tabBtnInactive: "text-text-secondary hover:bg-bg-secondary hover:text-text-primary",
+            tabBtnActive: "bg-accent1-base/20 text-accent1-base",
+            tabBtnInactive: "text-text-dark hover:bg-primary-base hover:text-text-base",
             tabBtnContent: "flex items-center gap-3",
             tabIconSvg: "w-5 h-5",
             contentArea: "flex-1 p-8 overflow-y-auto"
@@ -73,21 +73,21 @@ export class ConfigurationView extends Component {
     renderTabContent() {
         const styles = {
             wrapper: "space-y-8 animate-fade-in",
-            header: "text-xl font-bold text-text-primary border-b border-border-primary pb-2",
+            header: "text-xl font-bold text-text-base border-b border-secondary-base pb-2",
             section: "space-y-6",
-            card: "flex flex-col md:flex-row md:items-center justify-between gap-4 bg-bg-secondary-opaque p-4 rounded-xl border border-border-primary",
-            cardCol: "bg-bg-secondary-opaque p-5 rounded-xl border border-border-primary",
-            cardTitle: "text-text-primary font-medium",
-            cardDesc: "text-sm text-text-secondary",
-            select: "bg-bg-primary border border-border-primary text-text-primary rounded-lg px-4 py-2 outline-none focus:border-accent-primary transition-colors",
-            checkboxBg: "w-11 h-6 bg-border-primary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-primary",
-            valText: "text-accent-primary font-bold",
-            rangeInput: "w-full h-2 bg-bg-tertiary rounded-lg appearance-none cursor-pointer accent-accent-primary",
+            card: "flex flex-col md:flex-row md:items-center justify-between gap-4 bg-primary-base/80 p-4 rounded-xl border border-secondary-base",
+            cardCol: "bg-primary-base/80 p-5 rounded-xl border border-secondary-base",
+            cardTitle: "text-text-base font-medium",
+            cardDesc: "text-sm text-text-dark",
+            select: "bg-bg-base border border-secondary-base text-text-base rounded-lg px-4 py-2 outline-none focus:border-accent-primary transition-colors",
+            checkboxBg: "w-11 h-6 bg-border-primary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-base after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent1-base",
+            valText: "text-accent1-base font-bold",
+            rangeInput: "w-full h-2 bg-secondary-base rounded-lg appearance-none cursor-pointer accent-accent-primary",
             controlsGrid: "grid grid-cols-1 md:grid-cols-2 gap-4",
-            resetBtn: "px-6 py-2 bg-bg-tertiary hover:bg-border-primary text-text-primary rounded-lg transition-colors text-sm font-medium",
-            bindCard: "flex items-center justify-between bg-bg-secondary-opaque p-4 rounded-xl border border-border-primary",
-            bindLabel: "text-text-tertiary font-medium",
-            bindBtn: "px-4 py-2 bg-bg-primary border border-border-primary hover:border-accent-primary text-text-primary rounded-lg transition-colors font-mono min-w-[60px] text-center"
+            resetBtn: "px-6 py-2 bg-secondary-base hover:bg-border-primary text-text-base rounded-lg transition-colors text-sm font-medium",
+            bindCard: "flex items-center justify-between bg-primary-base/80 p-4 rounded-xl border border-secondary-base",
+            bindLabel: "text-text-dark/70 font-medium",
+            bindBtn: "px-4 py-2 bg-bg-base border border-secondary-base hover:border-accent-primary text-text-base rounded-lg transition-colors font-mono min-w-[60px] text-center"
         };
 
         switch (this.state.activeTab) {

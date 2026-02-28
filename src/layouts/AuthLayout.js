@@ -3,14 +3,14 @@ import { Component } from '@/core';
 export class AuthLayout extends Component {
     render(childHTML) {
         const styles = {
-            container: "min-h-screen w-full flex flex-col md:flex-row bg-bg-primary font-sans",
-            leftPane: "hidden md:flex md:w-1/2 items-center justify-center p-12 bg-gradient-to-br from-bg-tertiary to-bg-primary border-r border-border-primary",
-            logoWrapper: "text-center animate-fade-in",
-            title: "text-8xl font-black text-text-primary tracking-tighter mb-4",
-            titleHighlight: "text-accent-primary",
-            subtitle: "text-accent-hover text-xl italic font-light tracking-widest uppercase",
-            rightPane: "flex-1 flex items-center justify-center p-6 md:p-16 bg-bg-primary",
-            contentWrapper: "w-full max-w-md"
+            container: "min-h-screen w-full flex flex-col md:flex-row bg-bg-base font-sans",
+            leftPane: "hidden md:flex md:w-2/4 items-center justify-end p-16 bg-gradient-to-br from-bg-tertiary via-bg-primary to-bg-base relative overflow-hidden",
+            logoWrapper: "text-left max-w-lg animate-fade-in",
+            title: "text-7xl lg:text-8xl font-black text-text-base tracking-tight leading-none mb-6",
+            titleHighlight: "text-accent1-base",
+            subtitle: "text-accent1-light text-lg font-light tracking-wide uppercase",
+            rightPane: "flex-1 flex items-center justify-start p-8 md:p-20 bg-bg-base",
+            contentWrapper: "w-full max-w-md bg-bg-secondary/40 backdrop-blur-xl border border-border-primary rounded-3xl shadow-2xl p-8"
         };
 
         return `

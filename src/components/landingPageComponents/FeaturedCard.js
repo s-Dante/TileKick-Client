@@ -5,10 +5,10 @@ export class FeatureCard extends Component {
         const { icon, title, description } = this.props;
 
         const styles = {
-            card: "bg-bg-secondary-opaque backdrop-blur-md p-6 rounded-xl border border-border-primary hover:border-accent-primary transition-all group shadow-xl",
+            card: "bg-primary-base/80 backdrop-blur-md p-6 rounded-xl border border-secondary-base hover:border-accent-primary transition-all group shadow-xl",
             icon: "text-3xl mb-3 group-hover:scale-110 transition-transform",
-            title: "text-xl font-bold text-text-primary mb-2",
-            desc: "text-text-secondary text-sm"
+            title: "text-xl font-bold text-text-base mb-2",
+            desc: "text-text-dark text-sm"
         };
 
         return `
